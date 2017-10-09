@@ -1,0 +1,36 @@
+﻿@model IEnumerable<TarekDemo1.Models.Course>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>List of courses :</h2>
+
+<section class="body-content">
+    <div class="glyphicon-plus" >
+        @Html.ActionLink("Add new course","NewCourse","Course")
+    </div>
+
+    <div class="container">
+        <table class="table table-responsive">
+            <thead>
+                <tr>
+                    <th class="align-center">ID</th>
+                    <th class="align-center">Course name</th>
+                    <th class="align-center">Course credit</th>
+                </tr>
+            </thead>
+            
+            @foreach (var item in Model)
+            {
+            <tbody>
+                <tr>
+                    <td class="align-center">@Html.DisplayFor(modelItem => item.CourseId)</td>
+                    <td class="align-center">@Html.DisplayFor(modelItem => item.CourseName)</td>
+                    <td class="align-center">@Html.DisplayFor(modelItem => item.CourseCredit)</td>
+                </tr>
+            </tbody>
+            }
+        </table>
+    </div>
+</section>
+

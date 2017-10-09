@@ -1,0 +1,46 @@
+﻿@model TarekDemo1.Models.Course
+
+@{
+    ViewBag.Title = "NewCourse";
+}
+
+<h2>New Course</h2>
+
+@using (Html.BeginForm("SaveCourse", "Course", FormMethod.Post))
+{
+    <section class="body-content">
+        <input type="hidden" name="Course" value="" />
+        <div class="row">
+            <div class="col-lg-4">
+                <label>Course name: </label>
+            </div>
+            <div class="col-lg-8">
+                <input type="text" name="CourseName_name" value="" />
+            </div>
+        </div>
+        <br />
+
+        <div class="row">
+            <div class="col-lg-4">
+                <label>Course Credit: </label>
+            </div>
+            <div class="col-lg-8">
+                <select name="CourseCredit_name">
+                    <option value="False">Choose a credit</option>
+                    <option value="2">2</option>
+                    <option value="4">4</option>
+                </select>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-lg-4"></div>
+            <div class="col-lg-8">
+                <input type="submit" value="Save" />
+            </div>
+        </div>
+
+    </section>
+
+}
+
